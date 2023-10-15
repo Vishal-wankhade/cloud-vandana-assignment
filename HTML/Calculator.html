@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+
+
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
+        .input{
+            height: 100%;
+            width: 100%;
+            font-size: 25px;
+        }
+        .wrap{
+            height: 40%;
+            width: 40%;
+            border: 1px solid black;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            font-size: 25px;
+        }
+        .row1{
+            height: 20%;
+            width: 100%;
+            display: flex;
+            background-color: antiquewhite;
+        }
+        .row2{
+            height: 80%;
+            width: 100%;
+            display: flex;
+        }
+        .total{
+            width: 80%;
+            height: 100%;
+            background-color: white;
+            color: black;
+        }
+        .ac{
+            width: 20%;
+            height: 100%;
+            background-color: rgb(41, 241, 188);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+        }
+        .no{
+            width: 80%;
+            height: 100%;
+            background-color: black;
+            
+
+        }
+        .btn{
+           height: 25%;
+            width: 32%;
+            color: white;
+            background-color: black;
+        }
+        .sign{
+            width: 20%;
+            height: 100%;
+            background-color: gray;
+        }
+        .sign-btn{
+            width: 100%;
+            height: 25%;
+            background-color: transparent;
+            color: white;
+        }
+        @media screen and (max-width: 780px){
+            .wrap{
+                height: 70%;
+            width: 90%;
+            }
+        }
+        @media screen and (max-width: 400px){
+            .wrap{
+                height: 70%;
+            width: 90%;
+            }
+            .btn{
+                width: 30%;
+            }
+            .sign-btn{
+                width: 100%;
+            }
+        }
+    </style>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div>
+            <div class="wrap">
+               <div class="row1">
+
+                <div class="total ">
+
+                    
+                </div>
+                <div class="ac">
+                   AC
+                </div >
+               </div>
+
+               <div class="row2">
+                <div class="no">
+                   
+                    <button class="btn">9</button>
+                   <button class="btn">8</button>
+                   <button class="btn">7</button>
+                   <button class="btn">4</button>
+                   <button class="btn">5</button>
+                   <button class="btn">6</button>
+                   <button class="btn">1</button>
+                   <button class="btn">2</button>
+                   <button class="btn">3</button>
+                  <button class="btn">.</button>
+                   <button class="btn">0</button>
+                   <button class="btn">=</button>
+                </div>
+                <div class="sign">
+                    <button class="btn sign-btn">+</button>
+                   <button class="btn sign-btn">-</button>
+                   <button class="btn sign-btn">/</button>
+                   <button class="btn sign-btn">*</button>
+                </div>
+               </div>
+            </div>
+        </div>
+        
+        <script>
+             var total = document.querySelector(".total");
+
+             var nos = document.querySelectorAll(".btn");
+
+             var ac = document.querySelector(".ac");
+
+             
+
+         
+
+             nos.forEach((no) =>{
+
+                no.addEventListener("click" , (e) =>{
+                    console.log("hi");
+               let value = e.target.textContent;
+             
+                
+                
+
+             
+
+                 if (value === '='){
+                    var result = eval(total.innerHTML); 
+                    total.innerHTML = result;
+                }
+                else{ 
+                    total.innerHTML =   total.innerHTML + value;
+                }
+
+              
+
+                
+                })
+
+
+
+             })
+             
+             ac.addEventListener("click", ()=>{
+
+                result = "";
+                total.innerHTML = result;
+             })
+
+
+
+
+         
+
+
+
+
+        </script>
+    </body>
+</html>
